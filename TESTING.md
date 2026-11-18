@@ -15,10 +15,11 @@ The interaction checks below ran against the game's actual JavaScript with simul
 
 ## Fix found during testing
 
-The first physics settings made shots too slow to reach the tower, and shots bounced away from supports. The launch speed and gravity were tuned, and strong impacts now break a support and continue through it. The loss and restart flow, invalid short pull, gravity advance, and a win sequence passed simulated interaction checks after the fix. A repeatable win sequence in the simulation is two shallow down-right pulls (about 78 pixels back and 8 pixels upward each). To test a loss, make five steep up-right pulls; expected result is the 5/5 loss overlay with all three targets remaining.
+The intro overlay initially had a CSS display rule that could keep it covering the game after the Start button hid it. An explicit `.overlay[hidden]{display:none}` rule now removes it when hidden. The first physics settings made shots too slow to reach the tower, and shots bounced away from supports. The launch speed and gravity were tuned, and strong impacts now break a support and continue through it. The loss and restart flow, invalid short pull, gravity advance, and a win sequence passed simulated interaction checks after the fix. A repeatable win sequence in the simulation is two shallow down-right pulls (about 78 pixels back and 8 pixels upward each). To test a loss, make five steep up-right pulls; expected result is the 5/5 loss overlay with all three targets remaining.
 
 ## Still needs a person
 
 GitHub Pages is not enabled, so the repo URL is not currently a playable web page. Download the repo and open `index.html` in a browser to do the visual play-through. A classmate should then try it without coaching; write down where they get stuck and decide whether another usability fix is needed. No classmate feedback is claimed here.
+
 
 
