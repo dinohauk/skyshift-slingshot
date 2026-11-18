@@ -9,7 +9,7 @@ Open `skyshift-slingshot.html` in a current browser. It has no external assets o
 ## Rules
 
 - Start a round with **Start round**. Drag the red bird backward from the sling and release to launch it. Dragging farther gives the shot more speed; a short pull under 10 pixels does not use a shot.
-- Each launch rotates gravity clockwise by 90 degrees: down, left, up, right, then down again. Gravity acts on the bird and loose debris until they leave the screen or slow down.
+- Each launch rotates gravity clockwise by 90 degrees: down, left, up, right, then down again. Gravity affects the bird, targets, and loose debris until each leaves the screen or slows down. The tower blocks stay in place until an impact breaks them.
 - Knock all three green targets out of the play area or hit them hard enough to remove them. Blocks can be damaged by impacts and break into debris.
 - You have five launches. Clearing all targets wins immediately; using all five without clearing them loses.
 - Press **R** at any time to reset the round. After a win or loss, choose **Play again**.
@@ -20,7 +20,7 @@ Pointer or mouse drag/release launches. The HUD shows surviving targets, launche
 
 ## Example strategy
 
-A shot launched while gravity points left can knock a support out, then gravity pulls the loose structure sideways. The next launch points gravity up, changing where debris falls and which support is safest to hit.
+When gravity points left, both the bird and targets drift left during the shot. After a block breaks, its debris also drifts left. A later launch rotates gravity up, changing the next flight and where targets move.
 
 ## Five checks to perform
 
@@ -32,8 +32,9 @@ A shot launched while gravity points left can knock a support out, then gravity 
 
 ## Presentation notes
 
-- Creative choice: gravity rotates after each launch, so aiming also decides the direction the structure will fall afterward.
-- Code to explain: `gravity=(gravity+1)%4` advances through the four gravity vectors after a launch; the physics step applies the selected vector to the bird and debris.
+- Creative choice: gravity rotates after each launch, so each shot changes its own flight path and the direction targets and broken debris move.
+- Code to explain: `gravity=(gravity+1)%4` advances through the four gravity vectors after a launch; the physics step applies the selected vector to the bird, targets, and debris.
 - Improvement made during review: the target counter now updates immediately when a target is knocked out or leaves the play area.
 - Have a classmate try a fresh copy and note where they hesitate; this guide does not claim a classmate test has happened.
+
 
