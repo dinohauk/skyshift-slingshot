@@ -4,7 +4,7 @@ A one screen slingshot puzzle inspired by Angry Birds, built from original simpl
 
 ## Run
 
-Open `skyshift-slingshot.html` in a current browser. It has no external assets or libraries.
+Open `index.html` in a current browser. It has no external assets or libraries.
 
 ## Rules
 
@@ -36,5 +36,6 @@ When gravity points left, both the bird and targets drift left during the shot. 
 - Code to explain: `gravity=(gravity+1)%4` advances through the four gravity vectors after a launch; the physics step applies the selected vector to the bird, targets, and debris.
 - Improvement made during review: the target counter now updates immediately when a target is knocked out or leaves the play area.
 - Have a classmate try a fresh copy and note where they hesitate; this guide does not claim a classmate test has happened.
+
 
 
